@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: #1F2E52;
+  }
+  body {
+    background-color: #0B1020;
+    color: #E6EDF7;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0B1020;
+}
+::-webkit-scrollbar-thumb {
+  background: #1F2E52;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3478F6;
+}
+
+/* Glass & Card Utility Classes */
+.glass-panel {
+  background: rgba(17, 27, 50, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(31, 46, 82, 0.8);
+}
+
+.card-surface {
+  background: #111B32;
+  border: 1px solid #1F2E52;
+  border-radius: 0.75rem;
+}
+
+.card-surface:hover {
+  border-color: rgba(52, 120, 246, 0.4);
+}
+
+/* Pulse animation for voice/recording */
+@keyframes audio-pulse {
+  0%, 100% {
+    transform: scaleY(0.4);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+.animate-audio-bar {
+  animation: audio-pulse 1.2s ease-in-out infinite;
+}
